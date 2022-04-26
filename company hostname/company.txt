@@ -1,0 +1,29 @@
+Company X is creating inventory of their non-domain joined PC and is running this script on every freshly re-installed PC with standard Windows 10 ISO. Here you can see the script and example output from one laptop. What is the laptop hostname?
+
+$a = new-object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+$b = new-object -TypeName System.Text.UTF8Encoding
+$c = [System.BitConverter]::ToString($a.ComputeHash($b.GetBytes($env:computername)))
+$c.ToLower() -replace '-', ''
+
+
+aefba1225a7dd21e174b0fbcc4da9d91
+
+
+Submit the flag as TDCNET{HOSTNAME_HERE}
+
+
+---------------------------------
+
+
+
+
+
+
+
+
+
+hashcat --force --potfile-disable -m 0 -a 3 hash.txt  -1 ?u?d DESKTOP-?1?1?1?1?1?1?1 
+
+
+
+reveals DESKTOP-P5U86UT

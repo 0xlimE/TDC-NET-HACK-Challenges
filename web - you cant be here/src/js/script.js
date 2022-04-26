@@ -1,0 +1,1 @@
+console.log("f0r_h4ck3r3}");

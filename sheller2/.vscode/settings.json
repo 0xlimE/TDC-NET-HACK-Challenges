@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "seccomp-syscalls.h": "c",
+        "seccomp.h": "c"
+    }
+}

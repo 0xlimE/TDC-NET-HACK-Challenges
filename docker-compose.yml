@@ -1,0 +1,94 @@
+version: "3.3"
+services:
+    # Clone2Pwn
+    carwebapp:
+        build: "./clone2own - CARWEBAPP"
+        ports:
+            - "9001:80"
+        restart: unless-stopped
+            
+    mediaserver:
+        build: "./clone2own - Mediaserver"
+        ports:
+            - "9002:80"
+        restart: unless-stopped
+            
+    htppd:
+        build: "./httpdServer/docker"
+        ports:
+            - "9003:8080"
+        restart: unless-stopped
+            
+    # WEB
+    uhyggelig:
+        build: "./web - uhyggelig"
+        ports:
+            - "8001:25999"
+        restart: unless-stopped
+            
+    ycbh:
+        build: "./web - you cant be here"
+        ports:
+            - "8002:80"
+        restart: unless-stopped
+        
+    theline:
+        build: "./web - the line"
+        ports:
+            - "8003:80"
+        restart: unless-stopped
+        
+    filip:
+        build: "Filips Bruteless Page"
+        ports:
+            - "8004:80"
+        restart: unless-stopped
+        
+    # xssapp:
+    #     build: "./XSS/App"
+    #     ports: 
+    #         - "8004:80"
+
+            
+# NEEDS FIXING    
+#    XSSAppPawn:
+#        build: "./XSS/XSSPawn"
+#        expose: 
+
+    # PWN
+    sheller1:
+        build: ./sheller/docker
+        ports: 
+            - "7002:7002"
+        restart: unless-stopped
+        
+    sheller2:
+        build: ./sheller2/docker
+        ports: 
+            - "7003:7003"
+        restart: unless-stopped
+        
+    sheller3:
+        build: ./sheller3/docker
+        ports:
+            - "7004:7004"
+        restart: unless-stopped
+            
+    cursed:
+        build: ./cursed/docker
+        ports: 
+            - "7001:1024"
+        restart: unless-stopped
+
+    #CRYPTO
+    florian1:
+        build: "Crypto - Florians Game 1"
+        ports: 
+            - "6001:31337"
+        restart: unless-stopped
+
+    florian2:
+        build: "Crypto - Florians Game 2"
+        ports: 
+            - "6002:31337"
+        restart: unless-stopped

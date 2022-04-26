@@ -1,0 +1,3 @@
+The /toc endpoints is trying to extract the table of contents out of PDFS, there is a lot of code in 
+in the end it seems it is possible to let the info from the toc flow to the render template string by having the table of content line start with 'introduction (payload) hey'
+the payload has to be on one line with no spaces
